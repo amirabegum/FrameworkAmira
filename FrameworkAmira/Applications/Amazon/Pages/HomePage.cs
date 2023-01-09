@@ -23,7 +23,7 @@ namespace FrameworkAmira.Applications.Pages
         public IWebElement HelloNameLabel => _driver.driver.FindElement(By.Id("nav-link-accountList-nav-line-1"));
         public IWebElement SearchBar => _driver.driver.FindElement(By.Id("twotabsearchtextbox"));
         public IWebElement SearchButton => _driver.driver.FindElement(By.Id("nav-search-submit-button"));
-        public IWebElement BooksHeading => _driver.driver.FindElement(By.XPath("//div[@class='bxc-grid__text a-text-left   bxc-grid__text--light']//h11"));
+        public IWebElement BooksHeading => _driver.driver.FindElement(By.XPath("//h1[text()='Books']"));
         public IWebElement filterDropdown => _driver.driver.FindElement(By.Id("nav-search-dropdown-card"));
 
         public IWebElement filter(string option) => _driver.driver.FindElement(By.XPath($"//select[@id='searchDropdownBox']//option[text()='{option}']"));
