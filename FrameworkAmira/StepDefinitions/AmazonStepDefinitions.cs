@@ -43,6 +43,14 @@ namespace FrameworkAmira.StepDefinitions
             _amazon.HomePage.BooksHeading.Displayed.Should().BeTrue();
         }
 
+        [StepDefinition(@"I select ""([^""]*)"" from the main menu")]
+        public void WhenISelectFromTheMainMenu(string option)
+        {
+            _amazon.HomePage.filterDropdown.Click();
+            _amazon.HomePage.filter(option).Click();
+        }
+
+
 
     }
 }
