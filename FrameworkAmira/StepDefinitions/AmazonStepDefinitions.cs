@@ -46,8 +46,14 @@ namespace FrameworkAmira.StepDefinitions
         [StepDefinition(@"I select ""([^""]*)"" from the main menu")]
         public void WhenISelectFromTheMainMenu(string option)
         {
-            _amazon.HomePage.filterDropdown.Click();
-            _amazon.HomePage.filter(option).Click();
+            _amazon.HomePage.MenuTab(option).Click();
+        }
+
+        [StepDefinition(@"I am on the Amazon Homepage")]
+        public void GivenIAmOnTheAmazonHomepage()
+        {
+            Assert.That(_amazon.HomePage.pageTitle, Does.Match("Amazon.co.uk: Low Prices in Electronics, Books, Sports Equipment & more").IgnoreCase);
+            _amazon.HomePage.AcceptCookiesButton.Click();
         }
 
 

@@ -8,4 +8,4 @@ Scenario: Sign in to Account
 Scenario: Filter for books using the main menu 
 	Given I am on the Amazon Homepage 
 	When I select "Books" from the main menu 
-	Then the Books page will be displayed 
+	Then the books results will be displayed

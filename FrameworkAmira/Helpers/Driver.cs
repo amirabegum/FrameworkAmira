@@ -22,6 +22,7 @@ namespace FrameworkAmira.Drivers
                 {
                
                     ChromeOptions options = new ChromeOptions();
+                    options.AddArgument("--start-maximized");
                     driver = new RemoteWebDriver(options);
                     // _driver.driver = new ChromeDriver();
                 
@@ -51,6 +52,7 @@ namespace FrameworkAmira.Drivers
 
                     ChromeOptions options = new ChromeOptions();
                     options.AddArgument("incognito");
+                    options.AddArgument("--start-maximized");
                     driver = new ChromeDriver(options);
                    
 
