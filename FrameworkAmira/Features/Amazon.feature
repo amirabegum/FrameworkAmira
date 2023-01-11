@@ -22,5 +22,14 @@ Scenario: Generic searches can be filtered by department
 	When I search for "1984" in the search bar
 	Then "Books" will be present in the Department filters 
 
-Scenario: 
+Scenario Outline: Filter by Author 
+	When I search for "<title>" in the search bar
+	And I select "<author>" from the Author filter 
+	Then the number of search results will be displayed 
+	And search results will display that they are for the filter "<author>"
+
+	Examples: 
+	| title              | author        |
+	| 1984               | George Orwell |
+	| Brave New World    | Aldous Huxley |
 
