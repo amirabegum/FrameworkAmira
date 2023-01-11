@@ -21,7 +21,6 @@ namespace FrameworkAmira.StepDefinitions
         [StepDefinition(@"I am logged into my account")]
         public void GivenIAmLoggedIntoMyAccount()
         {
-            _amazon.HomePage.AcceptCookiesButton.Click();
             _amazon.HomePage.SignInTab.Click(); 
             _amazon.HomePage.EmailInputBox.SendKeys("amira.begum@roq.co.uk"); 
             _amazon.HomePage.ContinueButton.Click();
@@ -56,7 +55,25 @@ namespace FrameworkAmira.StepDefinitions
             _amazon.HomePage.AcceptCookiesButton.Click();
         }
 
+        [StepDefinition(@"the search filter is set to ""([^""]*)""")]
+        public void WhenTheSearchFilterIsSetTo(string option)
+        {
+           _amazon.HomePage.filterDropdown.Click();
+            _amazon.HomePage.filter(option).Click();
+            
+        }
 
+        [StepDefinition(@"I submit the search bar")]
+        public void WhenISubmitTheSearchBar()
+        {
+            _amazon.HomePage.SearchButton.Click();
+        }
+
+        [StepDefinition(@"""([^""]*)"" will be present in the Department filters")]
+        public void ThenWillBePresentInTheDepartmentFilters(string department)
+        {
+            _amazon.HomePage.departmentFilter(department).Displayed.Should().BeTrue();
+        }
 
     }
 }
