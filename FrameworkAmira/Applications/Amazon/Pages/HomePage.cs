@@ -28,7 +28,7 @@ namespace FrameworkAmira.Applications.Pages
         public IWebElement MenuTab(string option) => _driver.driver.FindElement(By.XPath($"//div[@id='nav-xshop-container']//a[text()='{option}']"));
         public IWebElement filter(string option) => _driver.driver.FindElement(By.XPath($"//select[@id='searchDropdownBox']//option[text()='{option}']"));
         public IWebElement departmentFilter(String department) => _driver.driver.FindElement(By.XPath($"//div[@id='departments']//span[text()='{department}']"));
-        
+        public IWebElement userName => _driver.driver.FindElement(By.XPath("//span[contains(text(),'Amira')]"));
         
         
         
