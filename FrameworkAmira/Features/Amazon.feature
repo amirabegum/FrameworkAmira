@@ -3,7 +3,16 @@
 Background: 
 	Given I am on the Amazon Homepage 
 
-Scenario: Sign in to Account 
+Scenario: Sign in to account
+	Given I click on the sign in tab
+	When I enter my email 
+	And I click on continue 
+	And I enter my password 
+	And I click on the sign in button 
+	Then I have successfully signed in 
+
+
+Scenario: Sign in and search for books 
 	Given I am logged into my account
 	When I search for "Books" in the search bar
 	Then the books results will be displayed 

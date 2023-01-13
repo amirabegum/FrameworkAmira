@@ -18,6 +18,44 @@ namespace FrameworkAmira.StepDefinitions
             _driver = driver;
         }
 
+        [StepDefinition(@"I click on the sign in tab")]
+        public void GivenIClickOnTheSignInTab()
+        {
+            _amazon.HomePage.SignInTab.Click();
+        }
+
+        [StepDefinition(@"I enter my email")]
+        public void WhenIEnterMyEmail()
+        {
+            _amazon.HomePage.EmailInputBox.SendKeys("amira.begum@roq.co.uk");
+        }
+
+        [StepDefinition(@"I click on continue")]
+        public void WhenIClickOnContinue()
+        {
+            _amazon.HomePage.ContinueButton.Click();
+        }
+
+        [StepDefinition(@"I enter my password")]
+        public void WhenIEnterMyPassword()
+        {
+            _amazon.HomePage.PasswordInputBox.SendKeys("Amira123");
+        }
+
+        [StepDefinition(@"I click on the sign in button")]
+        public void WhenIClickOnTheSignInButton()
+        {
+            _amazon.HomePage.SignInButton.Click();
+        }
+
+        [StepDefinition(@"I have successfully signed in")]
+        public void ThenIHaveSuccessfullySignedIn()
+        {
+            _amazon.HomePage.userName.Displayed.Should().BeTrue();
+        }
+
+
+
         [StepDefinition(@"I am logged into my account")]
         public void GivenIAmLoggedIntoMyAccount()
         {
@@ -76,7 +114,7 @@ namespace FrameworkAmira.StepDefinitions
         }
 
         [StepDefinition(@"I select ""([^""]*)"" from the Author filter")]
-        public void WhenISelectFromTheAuthorFilter(string p0)
+        public void WhenISelectFromTheAuthorFilter(string author)
         {
             throw new PendingStepException();
         }
