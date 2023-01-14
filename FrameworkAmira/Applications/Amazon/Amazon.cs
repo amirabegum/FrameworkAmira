@@ -1,4 +1,5 @@
-﻿using FrameworkAmira.Applications.Pages;
+﻿
+using FrameworkAmira.Applications.Pages;
 using FrameworkAmira.Drivers;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,7 @@ namespace FrameworkAmira.Applications
         }
 
         public HomePage HomePage => new HomePage(_driverManager); //creates an instance of homepage 
+        public Books Books => new Books(_driverManager);
 
     }
 }

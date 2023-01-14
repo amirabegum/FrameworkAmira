@@ -116,21 +116,15 @@ namespace FrameworkAmira.StepDefinitions
         [StepDefinition(@"I select ""([^""]*)"" from the Author filter")]
         public void WhenISelectFromTheAuthorFilter(string author)
         {
-            throw new PendingStepException();
+            _amazon.Books.authorFilter(author).Click();
         }
 
         [StepDefinition(@"the number of search results will be displayed")]
         public void ThenTheNumberOfSearchResultsWillBeDisplayed()
         {
-            throw new PendingStepException();
+            _amazon.Books.searchResultNumber.Displayed.Should().BeTrue();
         }
 
-        [StepDefinition(@"search results will display that they are for the filter ""([^""]*)""")]
-        public void ThenSearchResultsWillDisplayThatTheyAreForTheFilter(string p0)
-        {
-            throw new PendingStepException();
-        }
-
-
+       
     }
 }

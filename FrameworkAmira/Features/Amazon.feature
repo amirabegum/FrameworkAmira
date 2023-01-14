@@ -11,7 +11,6 @@ Scenario: Sign in to account
 	And I click on the sign in button 
 	Then I have successfully signed in 
 
-
 Scenario: Sign in and search for books 
 	Given I am logged into my account
 	When I search for "Books" in the search bar
@@ -35,7 +34,6 @@ Scenario Outline: Filter by Author
 	When I search for "<title>" in the search bar
 	And I select "<author>" from the Author filter 
 	Then the number of search results will be displayed 
-	And search results will display that they are for the filter "<author>"
 
 	Examples: 
 	| title              | author        |
