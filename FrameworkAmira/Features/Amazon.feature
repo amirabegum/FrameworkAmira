@@ -40,3 +40,9 @@ Scenario Outline: Filter by Author
 	| 1984               | George Orwell |
 	| Brave New World    | Aldous Huxley |
 
+Scenario: Failing test for report
+	Given I am logged into my account
+	When I search for "Garden Furniture" in the search bar
+	Then the garden page is visible 
+
+
