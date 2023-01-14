@@ -125,6 +125,12 @@ namespace FrameworkAmira.StepDefinitions
             _amazon.Books.searchResultNumber.Displayed.Should().BeTrue();
         }
 
-       
+        [StepDefinition(@"the garden page is visible")]
+        public void ThenTheGardenPageIsVisible()
+        {
+            _amazon.HomePage.gardenFurniture.Displayed.Should().BeTrue();
+        }
+
+
     }
 }
