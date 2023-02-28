@@ -39,8 +39,9 @@ namespace FrameworkAmira.Drivers
                  }
                   else if (BrowserType.Equals("Firefox"))
             {
-                
+
                     // _driver.driver = new RemoteWebDriver();
+                 
                     FirefoxOptions options = new FirefoxOptions();
                     driver = new RemoteWebDriver(options);
                 
