@@ -18,8 +18,8 @@ namespace FrameworkAmira.Applications
             _driverManager = driverManager;
         }
 
-        public HomePage HomePage => new HomePage(_driverManager); //creates an instance of homepage 
-        public Books Books => new Books(_driverManager);
+        public HomePage HomePage => new(_driverManager); //creates an instance of homepage 
+        public Books Books => new(_driverManager);
 
     }
 }

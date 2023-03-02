@@ -42,7 +42,7 @@ namespace FrameworkAmira.StepDefinitions.Hooks
         public void BeforeScenario(ScenarioContext context)
         {
             scenario = feature.CreateNode<Scenario>(context.ScenarioInfo.Title);
-            _driver.BrowserTypeSwitch("Chrome", false);
+            _driver.BrowserTypeSwitch("Edge", true);
             _driver.Init("https://www.amazon.co.uk/");
             // _objectContainer.RegisterInstanceAs<Driver>(_driver); //can call from object container, can run multiple simultaneously
             _objectContainer.RegisterInstanceAs<Amazon>(new Amazon(_driver));
