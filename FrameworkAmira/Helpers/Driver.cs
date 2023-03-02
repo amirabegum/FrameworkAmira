@@ -42,7 +42,7 @@ namespace FrameworkAmira.Drivers
 
                     // _driver.driver = new RemoteWebDriver();
                  
-                    FirefoxOptions options = new FirefoxOptions();
+                    FirefoxOptions options = new();
                     driver = new RemoteWebDriver(options);
                 
             }
