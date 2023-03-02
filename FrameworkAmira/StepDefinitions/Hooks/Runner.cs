@@ -3,6 +3,7 @@ using AventStack.ExtentReports.Gherkin.Model;
 using AventStack.ExtentReports.Reporter;
 using BoDi;
 using FrameworkAmira.Applications;
+using FrameworkAmira.Applications.SwagLabs;
 using FrameworkAmira.Drivers;
 using OpenQA.Selenium;
 namespace FrameworkAmira.StepDefinitions.Hooks
@@ -30,7 +31,7 @@ namespace FrameworkAmira.StepDefinitions.Hooks
         {
             Directory.CreateDirectory(reportPath);
             extent = new ExtentReports();
-            ExtentHtmlReporter htmlreport = new ExtentHtmlReporter(reportPath);
+            ExtentHtmlReporter htmlreport = new(reportPath);
             extent.AttachReporter(htmlreport);
         }
         [BeforeFeature]
@@ -42,15 +43,17 @@ namespace FrameworkAmira.StepDefinitions.Hooks
         public void BeforeScenario(ScenarioContext context)
         {
             scenario = feature.CreateNode<Scenario>(context.ScenarioInfo.Title);
-            _driver.BrowserTypeSwitch("Edge", true);
-            _driver.Init("https://www.amazon.co.uk/");
+            _driver.BrowserTypeSwitch("Chrome", false);
+            _driver.Init("https://www.saucedemo.com/");
             // _objectContainer.RegisterInstanceAs<Driver>(_driver); //can call from object container, can run multiple simultaneously
-            _objectContainer.RegisterInstanceAs<Amazon>(new Amazon(_driver));
+            _objectContainer.RegisterInstanceAs<SwagLabs>(new SwagLabs(_driver));
         }
+
         [BeforeStep]
-        public void BeforeStep()
+        public static void BeforeStep()
         {
         }
+
         [AfterStep]
         public void AfterStep()
         {
