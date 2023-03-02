@@ -48,7 +48,7 @@ Scenario: Verify locked user cannot login
 
 Scenario: Failed test for reporting purposes 
 	Given I am on the SwagLabs Page 
-	When I enter the username "user_101"
+	When I enter the username "user_101*"
 	And I enter the password 
 	And I click the Login button
 	Then I have successfully logged in 
