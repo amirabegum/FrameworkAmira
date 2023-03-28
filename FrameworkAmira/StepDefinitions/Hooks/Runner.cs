@@ -52,6 +52,7 @@ namespace FrameworkAmira.StepDefinitions.Hooks
         [BeforeStep]
         public static void BeforeStep()
         {
+            //
         }
 
         [AfterStep]
