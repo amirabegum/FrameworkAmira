@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WebDriverManager.DriverConfigs.Impl;
 
 namespace FrameworkAmira.Drivers
 {
@@ -20,7 +21,7 @@ namespace FrameworkAmira.Drivers
             if(RemoteExecution == true) { 
             if (BrowserType.Equals("Chrome"))
                 {
-               
+                   // new WebDriverManager.DriverManager().SetUpDriver(new ChromeConfig());
                     ChromeOptions options = new ChromeOptions();
                     options.AddArgument("--start-maximized");
                     driver = new RemoteWebDriver(options);
@@ -50,7 +51,7 @@ namespace FrameworkAmira.Drivers
             else {
                 if (BrowserType.Equals("Chrome"))
                 {
-
+                  //  new WebDriverManager.DriverManager().SetUpDriver(new ChromeConfig());
                     ChromeOptions options = new ChromeOptions();
                     options.AddArgument("incognito");
                     options.AddArgument("--start-maximized");
